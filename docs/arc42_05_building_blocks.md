@@ -95,7 +95,11 @@ All game-list parameters (`genres`, `parent_platforms`, `ordering`, `search`, `p
 
 ### Entities
 
-`Game`, `Genre`, `Platform`, `Publisher`, `Screenshot`, `Trailer` — plain TypeScript interfaces in [src/entities/](../src/entities/).
+`Game`, `GameDetails`, `Genre`, `Platform`, `Publisher`, `Screenshot`, `Trailer` — plain TypeScript interfaces in [src/entities/](../src/entities/). `GameDetails` extends `Game` with additional metadata (`website`, `playtime`, `esrb_rating`); it is not yet consumed by `useGame` or `GameDetailsPage`.
+
+**TODO / Review Needed**
+
+- [src/entities/Game.ts](../src/entities/Game.ts) declares two `export default` interfaces (`Game` and `GameDetails`), which is invalid TypeScript and conflicts with the one-default-export convention. Confirm the intended export shape (e.g. a separate `GameDetails.ts`) and update this section.
 
 ### Store (`useGameQueryStore`)
 
