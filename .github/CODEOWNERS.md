@@ -2,4 +2,4 @@
 *.js    @samirzaei
 
 # Changes to files in the builds folder need to be reviewed by the octocat user/group:
-/build/ @samirzaei
+/build/ @lokesh-adapaka
