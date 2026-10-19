@@ -16,3 +16,18 @@ export default interface Game {
   description: string;
   description_raw: string;
 }
+
+export default interface Gamedetails {
+  id: number;
+  name: string;
+  background_image: string;
+  slug: string;
+  genres: Genre[];
+  publishers: Publisher[];
+  released: string;
+  parent_platforms: { platform: Platform }[];
+  metacritic: number;
+  rating_top: number;
+  description: string;
+  description_raw: string;
+}
