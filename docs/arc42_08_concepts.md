@@ -7,6 +7,7 @@ The domain mirrors the RAWG API. All entities live in [src/entities/](../src/ent
 | Entity        | Key fields (excerpt)                                                                                  |
 | ------------- | ------------------------------------------------------------------------------------------------------ |
 | **Game**      | `id`, `slug`, `name`, `background_image`, `genres[]`, `publishers[]`, `parent_platforms[]`, `metacritic`, `rating_top`, `released`, `description_raw` |
+| **GameDetails** | Extends `Game` with: `website`, `playtime`, `esrb_rating` (object with `id`, `name`, `slug` or null). Used on detail pages for enriched game metadata. |
 | **Genre**     | `id`, `name`, `slug`, `image_background`                                                              |
 | **Platform**  | `id`, `name`, `slug`                                                                                  |
 | **Publisher** | `id`, `name`                                                                                          |

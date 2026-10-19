@@ -95,7 +95,7 @@ All game-list parameters (`genres`, `parent_platforms`, `ordering`, `search`, `p
 
 ### Entities
 
-`Game`, `Genre`, `Platform`, `Publisher`, `Screenshot`, `Trailer` — plain TypeScript interfaces in [src/entities/](../src/entities/).
+`Game`, `GameDetails`, `Genre`, `Platform`, `Publisher`, `Screenshot`, `Trailer` — plain TypeScript interfaces in [src/entities/](../src/entities/). `GameDetails` extends `Game` with additional metadata (`website`, `playtime`, `esrb_rating`) for detailed game pages.
 
 ### Store (`useGameQueryStore`)
 
