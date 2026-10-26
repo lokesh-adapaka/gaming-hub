@@ -95,11 +95,11 @@ All game-list parameters (`genres`, `parent_platforms`, `ordering`, `search`, `p
 
 ### Entities
 
-`Game`, `GameDetails`, `Genre`, `Platform`, `Publisher`, `Screenshot`, `Trailer` — plain TypeScript interfaces in [src/entities/](../src/entities/). `GameDetails` extends `Game` with additional metadata (`website`, `playtime`, `esrb_rating`); it is not yet consumed by `useGame` or `GameDetailsPage`.
+`Game`, `GameDetails`, `GameInfo`, `Genre`, `Platform`, `Publisher`, `Screenshot`, `Trailer` — plain TypeScript interfaces in [src/entities/](../src/entities/). `GameDetails` extends `Game` with additional metadata (`website`, `playtime`, `esrb_rating`); `GameInfo` extends `Game` with `platforms` (`Platform[]`) and `esrb_rating`. Neither is yet consumed by `useGame` or `GameDetailsPage`.
 
 **TODO / Review Needed**
 
-- [src/entities/Game.ts](../src/entities/Game.ts) declares two `export default` interfaces (`Game` and `GameDetails`), which is invalid TypeScript and conflicts with the one-default-export convention. Confirm the intended export shape (e.g. a separate `GameDetails.ts`) and update this section.
+- [src/entities/Game.ts](../src/entities/Game.ts) declares three `export default` interfaces (`Game`, `GameDetails`, `GameInfo`), which is invalid TypeScript and conflicts with the one-default-export convention. Confirm the intended export shape (e.g. separate `GameDetails.ts` / `GameInfo.ts`). `GameInfo` also overlaps with `GameDetails` (both add `esrb_rating`); clarify whether both are needed. `Platform` is also not visibly imported in `Game.ts` and update this section.
 
 ### Store (`useGameQueryStore`)
 
