@@ -95,7 +95,7 @@ All game-list parameters (`genres`, `parent_platforms`, `ordering`, `search`, `p
 
 ### Entities
 
-`Game`, `Genre`, `Platform`, `Publisher`, `Screenshot`, `Trailer` — plain TypeScript interfaces in [src/entities/](../src/entities/).
+`Game`, `Genre`, `Platform`, `Publisher`, `Screenshot`, `Trailer` — plain TypeScript interfaces in [src/entities/](../src/entities/). The `GameDetails` and `GameInfo` interfaces were removed from `Game.ts`; `Game` is now the only interface in that file and is the type used by `useGame` and `GameDetailsPage`.
 
 ### Store (`useGameQueryStore`)
 
