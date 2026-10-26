@@ -26,3 +26,11 @@ export default interface GameDetails extends Game {
     slug: string;
   } | null;
 }
+export default interface GameInfo extends Game {
+  platforms: Platform[];
+  esrb_rating: {
+    id: number;
+    name: string;
+    slug: string;
+  } | null;
+}
