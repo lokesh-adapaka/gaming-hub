@@ -16,21 +16,3 @@ export default interface Game {
   description: string;
   description_raw: string;
 }
-
-export default interface GameDetails extends Game {
-  website: string;
-  playtime: number;
-  esrb_rating: {
-    id: number;
-    name: string;
-    slug: string;
-  } | null;
-}
-export default interface GameInfo extends Game {
-  platforms: Platform[];
-  esrb_rating: {
-    id: number;
-    name: string;
-    slug: string;
-  } | null;
-}
