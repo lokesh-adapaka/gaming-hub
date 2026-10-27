@@ -95,7 +95,11 @@ All game-list parameters (`genres`, `parent_platforms`, `ordering`, `search`, `p
 
 ### Entities
 
-`Game`, `Genre`, `Platform`, `Publisher`, `Screenshot`, `Trailer` — plain TypeScript interfaces in [src/entities/](../src/entities/). The `GameDetails` and `GameInfo` interfaces were removed from `Game.ts`; `Game` is now the only interface in that file and is the type used by `useGame` and `GameDetailsPage`.
+`Game`, `Genre`, `Platform`, `Publisher`, `Screenshot`, `Trailer` — plain TypeScript interfaces in [src/entities/](../src/entities/). `src/entities/Game.ts` declares `Game` plus `GameInfo` (adds `platforms`, nullable `esrb_rating`) and `GameDetails` (adds `website`, `playtime`, nullable `esrb_rating`), both extending `Game`. `useGame` and `GameDetailsPage` still use `Game`.
+
+**TODO / Review Needed**
+- `Game.ts` currently has three `export default interface` declarations; a module allows only one default export, so this will not compile. Confirm whether `GameInfo`/`GameDetails` should be named exports or separate files, consistent with the one-default-export convention.
+- Confirm whether `GameInfo`/`GameDetails` are intended to be consumed (no usages in this PR).
 
 ### Store (`useGameQueryStore`)
 
